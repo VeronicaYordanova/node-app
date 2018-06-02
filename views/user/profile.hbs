@@ -1,0 +1,39 @@
+{{#if user}}
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" method="post" action="/user/update">
+                <h3>Personal Information</h3>
+                <h4>User: {{user.email}}</h4>
+        {{#unless user.type}}
+            <fieldset>
+            <legend>Change Password</legend>
+            
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="oldpassword">Old Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="oldpassword" placeholder="Old Password" required name="oldpassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="newpassword">New Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="newpassword" placeholder="New Password" required name="newpassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="confirmNewPassword">Confirm Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm Password" required name="confirmNewPassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">                        
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </div>
+                </div>
+            </fieldset>
+            {{/unless}}
+        </form>
+    </div>
+</div>
+{{/if}}
